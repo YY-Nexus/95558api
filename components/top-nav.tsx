@@ -82,7 +82,7 @@ export function TopNav() {
 
             {/* 搜索框 - 桌面版 */}
             <div className="relative w-full max-w-md hidden md:block">
-              <EnhancedSearch placeholder="搜索API、代码片段、开发文档..." />
+              <EnhancedSearch placeholder="搜索..." />
             </div>
 
             {/* 搜索框 - 移动版 */}

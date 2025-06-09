@@ -105,7 +105,7 @@ export default function SearchPage() {
 
       {/* 搜索框 */}
       <div className="w-full max-w-2xl mx-auto">
-        <EnhancedSearch placeholder="输入关键词搜索..." fullWidth autoFocus className="search-container" />
+        <EnhancedSearch placeholder="搜索..." fullWidth autoFocus className="search-container" />
       </div>
 
       {/* 搜索结果 */}
