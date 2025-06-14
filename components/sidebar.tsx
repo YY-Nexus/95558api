@@ -36,7 +36,7 @@ interface SidebarItemProps {
 
 // 侧边栏项组件 / Sidebar item component
 function SidebarItem({ icon, label, href, isActive }: SidebarItemProps) {
-  // 按钮点击动画
+  // 按钮点��动画
   const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const button = event.currentTarget
     button.classList.add("button-press")

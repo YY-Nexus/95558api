@@ -1,184 +1,210 @@
-// 导航数据结构 / Navigation data structure
-export type NavItem = {
-  title: string
-  href?: string
-  icon?: string
-  children?: NavItem[]
-}
-
-// 主要分类数据 / Main category data
-export const mainCategories: NavItem[] = [
+export const navigationData = [
   {
-    title: "前端开发",
-    icon: "Code",
+    title: "系统管理",
+    href: "/system",
+    icon: "Settings",
+    description: "系统监控与优化工具",
     children: [
-      { title: "JavaScript", href: "/frontend/javascript" },
-      { title: "React", href: "/frontend/react" },
-      { title: "CSS", href: "/frontend/css" },
-      { title: "HTML", href: "/frontend/html" },
+      {
+        title: "技术验证",
+        href: "/system/validation",
+        icon: "Shield",
+        description: "模块功能完整性验证",
+      },
+      {
+        title: "用户体验优化",
+        href: "/system/ux-optimization",
+        icon: "Palette",
+        description: "界面设计与响应式布局优化",
+      },
+      {
+        title: "安全审计",
+        href: "/system/security-audit",
+        icon: "Lock",
+        description: "认证流程安全评估",
+      },
+      {
+        title: "性能测试",
+        href: "/system/performance-test",
+        icon: "Zap",
+        description: "大规模并发场景测试",
+      },
     ],
   },
   {
-    title: "后端开发", // Backend development
-    icon: "Server",
+    title: "开发者社区",
+    href: "/community",
+    icon: "Users",
+    description: "社区生态建设与合作伙伴计划",
     children: [
-      { title: "Node.js", href: "/backend/nodejs" },
-      { title: "Python", href: "/backend/python" },
-      { title: "Java", href: "/backend/java" },
-      { title: "Go", href: "/backend/go" },
-    ],
-  },
-  {
-    title: "数据库与存储", // Database and storage
-    icon: "Database",
-    children: [
-      { title: "SQL", href: "/database/sql" },
-      { title: "NoSQL", href: "/database/nosql" },
-      { title: "缓存", href: "/database/cache" }, // Cache
-    ],
-  },
-  {
-    title: "开发工具与环境", // Development tools and environment
-    icon: "Wrench",
-    children: [
-      { title: "VS Code", href: "/tools/vscode" },
-      { title: "Git", href: "/tools/git" },
-      { title: "Docker", href: "/tools/docker" },
-    ],
-  },
-  {
-    title: "API 集成库", // API integration library
-    icon: "Puzzle",
-    children: [
-      { title: "认证与授权", href: "/api/auth" }, // Authentication and authorization
-      { title: "支付集成", href: "/api/payment" }, // Payment integration
-      { title: "存储与数据库", href: "/api/storage" }, // Storage and database
-      { title: "消息与通知", href: "/api/notification" }, // Messages and notifications
-      { title: "地图与位置", href: "/api/map" }, // Maps and location
-    ],
-  },
-  {
-    title: "代码片段库", // Code snippet library
-    icon: "FileCode",
-    children: [
-      { title: "JavaScript", href: "/snippets/javascript" },
-      { title: "React", href: "/snippets/react" },
-      { title: "CSS", href: "/snippets/css" },
-      { title: "HTML", href: "/snippets/html" },
-    ],
-  },
-  {
-    title: "DevOps与SRE",
-    icon: "Workflow",
-    children: [
-      { title: "CI/CD", href: "/devops/cicd" },
-      { title: "监控", href: "/devops/monitoring" }, // Monitoring
-      { title: "容器化", href: "/devops/containerization" }, // Containerization
-    ],
-  },
-  {
-    title: "人工智能与机器学习", // Artificial Intelligence and Machine Learning
-    icon: "Brain",
-    children: [
-      { title: "深度学习", href: "/ai/deep-learning" }, // Deep Learning
-      { title: "自然语言处理", href: "/ai/nlp" }, // Natural Language Processing
-      { title: "计算机视觉", href: "/ai/computer-vision" }, // Computer Vision
+      {
+        title: "社区首页",
+        href: "/community",
+        icon: "Home",
+        description: "社区概览与最新动态",
+      },
+      {
+        title: "贡献指南",
+        href: "/contribute",
+        icon: "GitPullRequest",
+        description: "如何为项目做贡献",
+      },
+      {
+        title: "用户收藏",
+        href: "/user/collections",
+        icon: "Bookmark",
+        description: "个人收藏的内容",
+      },
     ],
   },
 ]
 
-// 标签数据 / Tag data
-export const tags = [
-  "api",
-  "array",
-  "async",
-  "context",
-  "css",
-  "destructuring",
-  "fetch",
-  "filter",
-  "flexbox",
-  "form",
-  "grid",
-  "hooks",
-  "html",
-  "html5",
-  "layout",
-  "localStorage",
-  "map",
-  "merge",
-  "object",
-  "promise",
-  "react",
-  "reduce",
-  "sessionStorage",
-  "state-management",
-  "storage",
-  "template",
-  "validation",
-]
-
-// 底部导航项 / Bottom navigation items
+// 底部导航项
 export const bottomNavItems = [
-  { title: "首页", href: "/", icon: "Home" }, // Home
-  { title: "API", href: "/api", icon: "Puzzle" },
-  { title: "代码", href: "/snippets", icon: "FileCode" }, // Code
-  { title: "工具", href: "/tools", icon: "Wrench" }, // Tools
-  { title: "设置", href: "/settings", icon: "Settings" }, // Settings
+  {
+    title: "首页",
+    href: "/",
+    icon: "Home",
+    description: "返回主页",
+  },
+  {
+    title: "API文档",
+    href: "/api",
+    icon: "Code",
+    description: "API接口文档",
+  },
+  {
+    title: "代码片段",
+    href: "/snippets",
+    icon: "FileCode",
+    description: "代码示例库",
+  },
+  {
+    title: "开发工具",
+    href: "/tools",
+    icon: "Wrench",
+    description: "开发者工具集",
+  },
+  {
+    title: "设置",
+    href: "/settings",
+    icon: "Settings",
+    description: "系统设置",
+  },
 ]
 
-// 路径到友好名称的映射，用于面包屑导航
-export const navPathMap: Record<string, string> = {
-  "/api": "API集成库",
-  "/api/auth": "认证与授权",
-  "/api/payment": "支付集成",
-  "/api/storage": "存储与数据库",
-  "/api/notification": "消息与通知",
-  "/api/map": "地图与位置",
-
-  "/snippets": "代码片段库",
+// 导航路径映射
+export const navPathMap = {
+  "/": "首页",
+  "/api": "API文档",
+  "/api/auth": "认证系统",
+  "/api/payment": "支付接口",
+  "/api/storage": "存储服务",
+  "/api/notification": "通知服务",
+  "/api/map": "地图服务",
+  "/snippets": "代码片段",
   "/snippets/javascript": "JavaScript",
   "/snippets/react": "React",
-  "/snippets/css": "CSS",
-  "/snippets/html": "HTML",
-
+  "/snippets/css": "CSS样式",
+  "/snippets/html": "HTML模板",
   "/tools": "开发工具",
+  "/tools/terminal": "终端工具",
   "/tools/vscode": "VS Code",
-  "/tools/git": "Git",
-  "/tools/docker": "Docker",
-  "/tools/terminal": "终端命令",
-  "/tools/terminal/variables": "终端变量",
-  "/tools/terminal/basics": "基础命令",
+  "/tools/git": "Git工具",
   "/tools/glossary": "术语表",
-
-  "/settings": "设置",
-  "/about": "关于",
-  "/about/brand": "品牌说明",
-
-  "/frontend": "前端开发",
-  "/frontend/javascript": "JavaScript",
-  "/frontend/react": "React",
-  "/frontend/css": "CSS",
-  "/frontend/html": "HTML",
-
-  "/backend": "后端开发",
-  "/backend/nodejs": "Node.js",
-  "/backend/python": "Python",
-  "/backend/java": "Java",
-  "/backend/go": "Go",
-
-  "/database": "数据库与存储",
-  "/database/sql": "SQL",
-  "/database/nosql": "NoSQL",
-  "/database/cache": "缓存",
-
-  "/devops": "DevOps与SRE",
-  "/devops/cicd": "CI/CD",
-  "/devops/monitoring": "监控",
-  "/devops/containerization": "容器化",
-
-  "/ai": "人工智能与机器学习",
-  "/ai/deep-learning": "深度学习",
-  "/ai/nlp": "自然语言处理",
-  "/ai/computer-vision": "计算机视觉",
+  "/settings": "系统设置",
+  "/search": "搜索结果",
+  "/about": "关于我们",
+  "/about/brand": "品牌信息",
+  "/system": "系统管理",
+  "/system/validation": "技术验证",
+  "/system/ux-optimization": "用户体验优化",
+  "/system/security-audit": "安全审计",
+  "/system/performance-test": "性能测试",
+  "/system/infrastructure": "基础设施",
+  "/system/dashboard": "系统仪表板",
+  "/community": "开发者社区",
+  "/contribute": "贡献指南",
+  "/user/collections": "用户收藏",
+  "/analytics": "数据分析",
+  "/help": "帮助文档",
+  "/auth": "用户认证",
+  "/admin": "管理后台",
 }
+
+// 主要分类
+export const mainCategories = [
+  {
+    id: "api",
+    title: "API接口",
+    description: "完整的API文档和示例",
+    icon: "Code",
+    color: "blue",
+    count: 12,
+    subcategories: [
+      { id: "auth", title: "认证系统", count: 8 },
+      { id: "payment", title: "支付接口", count: 1 },
+      { id: "storage", title: "存储服务", count: 1 },
+      { id: "notification", title: "通知服务", count: 1 },
+      { id: "map", title: "地图服务", count: 1 },
+    ],
+  },
+  {
+    id: "snippets",
+    title: "代码片段",
+    description: "实用的代码示例库",
+    icon: "FileCode",
+    color: "green",
+    count: 6,
+    subcategories: [
+      { id: "javascript", title: "JavaScript", count: 2 },
+      { id: "react", title: "React", count: 1 },
+      { id: "css", title: "CSS样式", count: 1 },
+      { id: "html", title: "HTML模板", count: 1 },
+      { id: "typescript", title: "TypeScript", count: 1 },
+    ],
+  },
+  {
+    id: "tools",
+    title: "开发工具",
+    description: "提升开发效率的工具集",
+    icon: "Wrench",
+    color: "purple",
+    count: 6,
+    subcategories: [
+      { id: "terminal", title: "终端工具", count: 2 },
+      { id: "vscode", title: "VS Code", count: 2 },
+      { id: "git", title: "Git工具", count: 2 },
+      { id: "dev-tools", title: "开发工具", count: 1 },
+    ],
+  },
+  {
+    id: "system",
+    title: "系统管理",
+    description: "系统监控与优化工具",
+    icon: "Settings",
+    color: "orange",
+    count: 6,
+    subcategories: [
+      { id: "validation", title: "技术验证", count: 1 },
+      { id: "ux-optimization", title: "用户体验优化", count: 1 },
+      { id: "security-audit", title: "安全审计", count: 1 },
+      { id: "performance-test", title: "性能测试", count: 1 },
+      { id: "infrastructure", title: "基础设施", count: 1 },
+      { id: "dashboard", title: "系统仪表板", count: 1 },
+    ],
+  },
+  {
+    id: "community",
+    title: "开发者社区",
+    description: "社区生态建设与合作",
+    icon: "Users",
+    color: "pink",
+    count: 3,
+    subcategories: [
+      { id: "community", title: "社区首页", count: 1 },
+      { id: "contribute", title: "贡献指南", count: 1 },
+      { id: "collections", title: "用户收藏", count: 1 },
+    ],
+  },
+]

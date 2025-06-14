@@ -4,6 +4,7 @@ import { Component, type ErrorInfo, type ReactNode } from "react"
 import { Button } from "@/components/ui/button"
 import { AlertTriangle, RefreshCw } from "lucide-react"
 import { BrandLogo } from "./brand-logo"
+import { DynamicIcon } from "@/components/dynamic-icon"
 
 interface ErrorBoundaryProps {
   children: ReactNode
@@ -93,23 +94,30 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
   }
 }
 
-export function ErrorPage({ error }: { error: Error }) {
+interface ErrorPageProps {
+  error?: Error
+  reset?: () => void
+}
+
+export function ErrorPage({ error, reset }: ErrorPageProps) {
   return (
-    <div className="container py-12">
-      <div className="flex flex-col items-center justify-center min-h-[400px] p-6 text-center">
-        <div className="bg-vibrant-red-100 p-4 rounded-full mb-4">
-          <AlertTriangle className="h-10 w-10 text-vibrant-red-600" />
+    <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="max-w-md w-full text-center">
+        <div className="text-red-500 mb-4">
+          <DynamicIcon name="close" className="h-16 w-16 mx-auto" />
         </div>
-        <h2 className="text-2xl font-bold mb-2">出现了一些问题</h2>
-        <p className="text-muted-foreground mb-6 max-w-md">
-          {error?.message || "应用遇到了意外错误，请尝试刷新页面或联系支持团队。"}
-        </p>
-        <div className="flex gap-4">
-          <Button onClick={() => window.location.reload()}>刷新页面</Button>
-          <Button variant="outline" onClick={() => window.history.back()}>
-            返回上一页
+        <h1 className="text-2xl font-bold mb-2">出错了</h1>
+        <p className="text-gray-600 dark:text-gray-400 mb-6">很抱歉，应用程序遇到了一个错误。</p>
+        {error && (
+          <div className="mb-4 p-4 bg-gray-100 dark:bg-gray-800 rounded text-left overflow-auto">
+            <code className="text-sm">{error.message}</code>
+          </div>
+        )}
+        {reset && (
+          <Button onClick={reset} className="mx-auto">
+            重试
           </Button>
-        </div>
+        )}
       </div>
     </div>
   )

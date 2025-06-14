@@ -164,7 +164,7 @@ export default function GlossaryPage() {
 
       {filteredItems.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-muted-foreground">没有找到匹配的术语</p>
+          <p className="text-muted-foreground">���有找到匹配的术语</p>
         </div>
       )}
     </div>

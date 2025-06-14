@@ -12,6 +12,7 @@ import { Sidebar } from "./sidebar"
 import { BrandLogoShort } from "./brand-logo"
 import { Breadcrumb } from "./breadcrumb"
 import { EnhancedSearch } from "./enhanced-search"
+import { UserMenu } from "./user-menu"
 
 export function TopNav() {
   const pathname = usePathname()
@@ -132,18 +133,7 @@ export function TopNav() {
                 </Button>
               </Link>
             ))}
-            <Link href="/settings">
-              <Button
-                variant={isActive("/settings") ? "default" : "ghost"}
-                size="sm"
-                className={`w-16 justify-center hidden md:flex ${
-                  isActive("/settings") ? "" : "nav-button-3d menu-item-hover"
-                }`}
-                onClick={handleButtonClick}
-              >
-                设置
-              </Button>
-            </Link>
+            <UserMenu />
           </nav>
         </div>
       </div>
